@@ -1,0 +1,18 @@
+<!--components/songList/songList.wxml-->
+<view class="listContainer">
+      <view class="listHeader">
+        <text>播放全部</text>
+        <text class="more">多选</text>
+      </view>
+      <scroll-view scroll-y enable-flex class="listScroll">
+        <view class="scrollItem" wx:for='{{recommendListData}}' wx:key='id' bindtap='toSongDetail' data-id='{{item.id}}' data-index='{{index}}'>
+          <!-- 通过data-song来进行传递数据 -->
+          <image src="{{item.album.picUrl}}"></image>
+          <view class="musicInfo">
+            <text class="name">{{item.name}}</text>
+            <text class="author">{{item.artists[0].name}}</text>
+          </view>
+          <text class="iconfont icon-gengduo"></text>
+        </view>
+      </scroll-view>
+  </view>

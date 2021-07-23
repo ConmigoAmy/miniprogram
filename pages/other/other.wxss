@@ -1,0 +1,232 @@
+/* pages/other/other.wxss */
+@import "/template/myTemplate/myTemplate.wxss";
+text {
+  padding: 0;
+  margin: 0;
+}
+.m-song-wrap {
+  padding-top: 63px;
+}
+.m-song-disc {
+  position: relative;
+  width: 248px;
+  height: 248px;
+  margin: 0 auto;
+}
+.m-song-turn {
+  width: 100%;
+  height: 100%;
+}
+.m-song-turn:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  background: url(//s3.music.126.net/mobile-new/img/disc.png?d3bdd10…=) no-repeat;
+  background-size: contain;
+}
+.m-song-rollwrap {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  margin: -75px 0 0 -75px;
+}
+.m-song-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  background: url(//s3.music.126.net/mobile-new/img/disc_default.png?ba7c53e…=) no-repeat;
+  background-size: contain;
+}
+.m-song-lgour, .m-song-light {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+}
+.m-song-light {
+  background: url(//s3.music.126.net/mobile-new/img/disc_light.png?2bb24f3…=) no-repeat;
+  background-size: contain;
+}
+.m-song-plybtn {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  z-index: 10;
+  background: url(//s3.music.126.net/mobile-new/img/play_btn_3x.png?4da7e135b7c089f3777ec5cdbbb3a8d8=) 0 0 no-repeat;
+  background-size: contain;
+}
+.m-song-plybtn:after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+.m-song-disc:after {
+  width: 96px;
+  height: 137px;
+  top: -70px;
+  left: 133px;
+  background-image: url(//s3.music.126.net/mobile-new/img/needle-ip6.png?be4ebbe…=);
+}
+.m-song-disc:after {
+  content: " ";
+  position: absolute;
+  top: -63px;
+  left: 107px;
+  z-index: 5;
+  width: 84px;
+  height: 122px;
+  background: url(//s3.music.126.net/mobile-new/img/needle.png?702cf6d…=) no-repeat;
+  background-size: contain;
+}
+.m-song-light {
+  background: url(//s3.music.126.net/mobile-new/img/disc_light.png?2bb24f3…=) no-repeat;
+  background-size: contain;
+}
+.m-song-bg {
+  background-color: #161824;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 150% 150%;
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  
+}
+.m-song-bg:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0,0,0,.7);
+}
+.m-song-clickarea {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  bottom: 200px;
+  z-index: 10;
+  margin-bottom: env(safe-area-inset-bottom);
+}
+.u-img {
+  width: 100%;
+  vertical-align: middle;
+}
+.aboutsougou {
+  display: none;
+}
+.m-song-info {
+  padding: 0 35px;
+  margin-top: 25px;
+  position: relative;
+  z-index: 20;
+  text-align: center;
+}
+.m-song-h2 {
+  font-size: 18px;
+}
+.m-song-h2 {
+  text-align: center;
+  line-height: 1.1;
+  color: #fefefe;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.m-song-autr, .m-song-pure {
+  font-size: 16px;
+}
+.m-song-autr {
+  color: hsla(0,0%,100%,.6);
+}
+.m-song-lrc {
+  position: relative;
+  margin-top: 14px;
+}
+.m-song-scroll {
+  line-height: 1.5;
+  font-size: 13px;
+  /* height: 50px; */
+  overflow: hidden;
+  -webkit-mask: -webkit-linear-gradient(top,#000,#000 70%,rgba(0,0,0,0));
+}
+.m-song-lremp, .m-song-scroll {
+  text-align: center;
+  color: hsla(0,0%,100%,.6);
+}
+.m-song-lritem {
+  /* display: inline-flex; */
+  height: 32px;
+  line-height: 32px;
+  
+}
+/* animation css  */
+.a-circling {
+  -webkit-animation: circling 20s linear infinite;
+  animation: circling 20s linear infinite;
+}
+.pause{
+  animation-play-state:paused;
+}
+@keyframes circling {
+  from {transform: rotateZ(0deg);}
+  to {transform: rotateZ(360deg);}
+}
+
+@-webkit-keyframes circling {
+  from {-webkit-transform: rotate(0deg);
+  }
+  to {-webkit-transform: rotate(360deg);}
+}
+.m-song-iner {
+  -webkit-transition: -webkit-transform .5s ease-out;
+  transition: -webkit-transform .5s ease-out;
+  transition: transform .5s ease-out;
+  transition: transform .5s ease-out,-webkit-transform .3s ease-out;
+}
+/*进度条长度  */
+.slid{
+  display: flex;
+  position: relative;
+  z-index: 10;
+  justify-content: space-between;
+  padding: 50rpx 20rpx;
+}
+.slid view{
+  
+  font-size: 32rpx;
+  color: #999;
+}
+slider{
+  width: 500rpx;
+  margin: 0 20rpx;
+  border-radius:5rpx;
+  
+}

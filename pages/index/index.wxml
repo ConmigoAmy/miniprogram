@@ -1,0 +1,83 @@
+<view class="indexContainer">
+  <!-- 轮播图 -->
+  <swiper class="banners" indicator-dots indicator-active-color="#d43c33" indicator-color="ivory" autoplay circular="">
+    <swiper-item wx:for='{{bannerList}}' wx:key='bannerId' >
+      <image src='{{item.pic}}' bindtap="getAlbum" data-id="{{item.encodeId}}" data-targetType="{{item.targetType}}"></image>
+    </swiper-item> 
+  </swiper>
+  <!-- 五个图标 导航 -->
+  <view class="navContainer">
+      <scroll-view enable-flex scroll-x class="navScroll">
+        <view class="navItem" bindtap='toRecommend'>
+            <text class="iconfont icon-meirituijian"></text>
+            <text>每日推荐</text>
+        </view> 
+      <view class="navItem" bindtap="toPersonalFM">
+          <text class="iconfont icon-gedan1"></text>
+          <text>视频</text>
+      </view> 
+      <view class="navItem" bindtap="toGedan">
+            <text class="iconfont icon-icon-ranking"></text>
+            <text>歌单</text>
+      </view>  
+      <view class="navItem" bindtap="toSearch">
+            <text class="iconfont icon-diantai"></text>
+            <text>搜索音乐</text>
+      </view>  
+      <!-- <view class="navItem">
+            <text class="iconfont icon-zhiboguankanliangbofangsheyingshexiangjixianxing"></text>
+            <text>数字专辑</text>
+      </view> -->
+      <!-- <view class="navItem">
+            <text class="iconfont icon-zhiboguankanliangbofangsheyingshexiangjixianxing"></text>
+            <text>专注冥想</text>
+      </view> -->
+      <!-- <view class="navItem">
+            <text class="iconfont icon-zhiboguankanliangbofangsheyingshexiangjixianxing"></text>
+            <text>歌房</text>
+      </view> -->
+      <!-- <view class="navItem">
+            <text class="iconfont icon-zhiboguankanliangbofangsheyingshexiangjixianxing"></text>
+            <text>游戏专区</text>
+      </view> -->
+      </scroll-view>
+  </view>
+
+
+
+
+  <!-- 推荐歌曲 -->
+  <view class="recommendContainer">
+  <!-- 头部 -->
+    <NavHeader nav='推荐歌单'></NavHeader>
+    <!-- 内容 -->
+    <scroll-view class="recommendScroll" enable-flex scroll-x>
+      <view class="scrollItem" wx:for='{{recommendList}}' wx:key='id' wx:for-item='recommendItem' >
+      <!-- wx:for-item='recommendItem指定默认循环项 -->
+        <image src="{{recommendItem.picUrl}}" bindtap="toPlayList" data-id="{{recommendItem.id}}"></image>
+        <text>{{recommendItem.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 排行榜 -->
+  <view class="topList">
+    <!-- 头部 -->
+    <NavHeader nav='排行榜'></NavHeader>
+    <!-- 内容 -->
+    <swiper class="topListSwiper" circular next-margin="50rpx">
+      <swiper-item wx:for='{{topList}}' wx:key='name'>
+      <view class="swiperItem">
+        <view class="title">{{item.name}}>></view>
+        <view class="musicItem" wx:for-item='topItem' wx:for='{{item.tracks}}' wx:key='id' data-id='{{topItem.id}}' bindtap="toDetail">
+          <image src="{{topItem.al.picUrl}}"></image>
+          <text class="count">{{index+1}}</text>
+          <text class="musicName">{{topItem.name}}</text>
+        </view>
+      </view>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  
+</view>

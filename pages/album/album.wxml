@@ -1,0 +1,25 @@
+<view class="albumContainer">
+  <!-- 头部 -->
+  <view class="header">
+    <image src="{{albumListData.album.picUrl}}"></image>
+  </view>
+  <!-- 列表区 -->
+  <view class="listContainer">
+      <view class="listHeader">
+        <text>播放全部</text>
+        <text class="more">多选</text>
+      </view>
+      <scroll-view scroll-y enable-flex class="listScroll">
+        <view class="scrollItem" wx:for='{{albumListData.songs}}' wx:key='id' bindtap='toSongDetail' data-id='{{item.id}}' data-index='{{index}}'>
+          <!-- 通过data-song来进行传递数据 -->
+          <!-- <image src="{{item.al.picUrl}}"></image> -->
+          <text>{{index}}+1</text>
+          <view class="musicInfo">
+            <text class="name">{{item.name}}</text>
+            <text class="author">{{item.ar[0].name}}</text>
+          </view>
+          <text class="iconfont icon-gengduo"></text>
+        </view>
+      </scroll-view>
+  </view>
+</view>

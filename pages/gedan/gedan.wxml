@@ -1,0 +1,40 @@
+<!--pages/gedan/gedan.wxml-->
+<view class="gedanContainer">
+  <scroll-view
+      scroll-x
+      class="navScroll"
+      enable-flex
+      scroll-into-view="{{'scroll' + navId}}"
+      scroll-with-animation
+  >
+  <!-- croll-into-view="{{'scroll' + navId}} -->
+  <!-- 锁定选择的哪一个选项为第一个 -->
+  <!-- scroll-with-animation 使用过渡动画 -->
+    <view id="{{'scroll' + item.id}}" class="navItem" wx:for="{{playListGroupList}}" wx:key="id">
+      <view class="navContent {{navId === item.id?'active': ''}}" bindtap="changeNav" id="{{item.id}}" data-id="{{item.id}}">
+        {{item.name}}
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 歌单列表 -->
+  <!-- 专属歌单 -->
+  <view class="zhuanshu">
+    <view class="scrollItem" wx:for='{{recommendList}}' wx:key='id' wx:for-item='recommendItem' >
+      <!-- wx:for-item='recommendItem指定默认循环项 -->
+        <image src="{{recommendItem.picUrl}}" bindtap="toPlayList" data-id="{{recommendItem.id}}"></image>
+        <text>{{recommendItem.name}}</text>
+      </view>
+  </view>
+
+  <!-- 每日新鲜推荐 -->
+  <view class="xinxian">
+    <scroll-view class="recommendScroll" enable-flex scroll-x>
+      <view class="scrollItem" wx:for='{{recommendList}}' wx:key='id' wx:for-item='recommendItem' >
+      <!-- wx:for-item='recommendItem指定默认循环项 -->
+        <image src="{{recommendItem.picUrl}}" bindtap="toPlayList" data-id="{{recommendItem.id}}"></image>
+        <text>{{recommendItem.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+<!--pages/login1/login1.wxml-->
+<view class="login1Container">
+  <!-- 头部图标 -->
+  <view class="icon"></view>
+  <!-- 底部登录方式 -->
+  <view class="loginWays">
+    <text class="cellphone">手机号登录</text>
+    <view>
+      <text class="emaill">邮箱登录</text>
+    </view>
+  </view>
+</view>

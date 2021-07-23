@@ -1,0 +1,78 @@
+/* pages/album/album.wxss */
+.albumContainer .header {
+  position: relative;
+  width: 100%;
+  height: 300rpx;
+}
+.albumContainer .header image{
+  width: 100%;
+  height: 100%;
+}
+.albumContainer .header .date{
+  position: absolute;
+  /* 基于父元素 */
+  left: 50%;
+  top: 50%;
+  margin-left: -150rpx;
+  margin-top:-50rpx;
+  color: #fff;
+
+  width: 300rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+.header .day{
+  font-size: 38rpx;
+}
+/* 列表区 */
+.listContainer{
+  padding: 0 20rpx;
+  border-radius: 30rpx;
+  background: #fff;
+  position: relative;
+  top:-20rpx;
+}
+.listContainer .more{
+  float: right;
+}
+.listContainer .listHeader{
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.listScroll{
+  height: calc(100vh-380rpx);
+}
+.listScroll .scrollItem image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 8rpx;
+}
+.scrollItem{
+  display: flex;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+.musicInfo{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+  max-width: 400rpx;
+}
+.musicInfo text{
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* 单行文本溢出处理 */
+}
+.scrollItem .iconfont{
+  position: absolute;
+  right: 0;
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: right;
+}

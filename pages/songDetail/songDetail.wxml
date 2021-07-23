@@ -1,0 +1,79 @@
+<!--pages/songDetail/songDetail.wxml-->
+<view class="songDetailContainer" bindtap="getisLyric" wx:if="{{!isLyric}}">
+  <!-- 播放页 -->
+  <view class="author">
+    {{song.ar[0].name}}</view>
+  <view class="circle"></view>
+  <!-- 底座 -->
+  <!-- <image src="/static/images/song/needle.png" class="needle {{isPlay?'needleRotate':''}}"></image> -->
+  <image src="/static/images/song/needle.png" class="needle {{isPlay&&'needleRotate'}}"></image>
+  <!-- 动态编写class的两种方式 -->
+  <view class="discContainer {{isPlay&&'discAnimation'}}">
+    <image src="/static/images/song/disc.png" class="disc"></image>
+    <image src="{{song.al.picUrl}}" class="musicImg"></image>
+  </view>
+
+  <!-- 进度条 -->
+  <view class="progressControl">
+    <text>{{currentTime}}</text>
+      <!-- 总进度条 -->
+    <view class="barControl">
+        <!-- 实时进度条 -->
+      <view class="audio-currentTime-bar" style="width:{{currentWidth+'rpx'}}">
+        <!-- 小圆球 -->
+        <view class="audio-circle"></view>
+      </view>
+    </view>
+    <text>{{durationTime}}</text>
+  </view>
+
+
+  <!-- 底部控制播放 -->
+  <view class="musicControl">
+    <text class="iconfont icon-iconsMusicyemianbofangmoshiShuffle"></text>
+    <text class="iconfont icon-shangyishou" id="pre" bindtap='handleSwitch'></text>
+    <text class="iconfont {{isPlay?'icon-zanting':'icon-bofang'}} big" bindtap='musicPlay'></text>
+    <text class="iconfont icon-next" id="next" bindtap='handleSwitch'></text>
+    <text class="iconfont icon-iconsMusicyemianbofangmoshiPlayList"></text>
+  </view>
+  
+</view>
+<view class="lyric" wx:else bindtap="getisLyric">
+  <!-- 歌词页 -->
+  <view style="position:relative">
+    <view class="m-song-info">
+      <h2 class="m-song-h2">
+        <!-- <text >{{song.ar[0].name}}</text> -->
+        <text >{{song.ar[0].name}}</text>
+        <!-- <b class="m-song-autr">{{songDetail.ar[0].name}}</b> -->
+      </h2>
+      <view class="m-song-lrc">
+        <view class="m-song-scroll" >
+          <!-- <view class="m-song-iner"  style="transform: translateY(-{{32*currentIndexMax}}rpx);"> -->
+            <!-- <block wx:for="{{lyrics}}" wx:key="index" wx:for-index="i" >
+            <view class="m-song-lritem" style='{{i==currentIndex?"color: rgb(255, 255, 255);":" "}}' >{{item}}</view>
+             </block> -->
+          <!-- <scroll-view enable-flex scroll-y scroll-with-animation>
+            <view wx:for="{{lyrics}}" wx:key="index" wx:for-index="i"></view>
+          </scroll-view> -->
+
+          <!-- <scroll-view  scroll-y scroll-with-animation='true' scroll-top='{{marginTop}}' class="scrollGeci"> -->
+           <view class='contentText'>
+           <scroll-view  scroll-y scroll-with-animation='true' scroll-top='{{marginTop}}' wx:for='{{storyContent}}' class="m-song-lritem">
+               <text class="m-song-lritem {{currentIndex222 == index ? 'currentTime' : ''}}">{{item[1]}}</text>
+            </scroll-view>
+       </view>
+        <!-- </scroll-view> -->
+
+          <!-- </view> -->
+          </view>
+        </view>
+      </view>
+    </view>
+   </view>
+   <view style="margin-top: 15px;">
+     <view>
+         <image src=""></image>
+      </view>
+   </view>
+<!-- </view> -->

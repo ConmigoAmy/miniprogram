@@ -1,0 +1,33 @@
+<!--pages/other/other.wxml-->
+<import src="/template/myTemplate/myTemplate.wxml"></import>
+<view class="otherContainer">
+    <view>
+      <template is='myTmp' data="{{...person}}"></template>
+    </view>
+
+    <!-- 测试获取openid 用户唯一标识 -->
+    <button bindtap="handleGetOpenid">获取openid</button>
+</view>
+<view class="m-song-bg"  
+style="background-image: url({{songDetail.al.picUrl}});filter: blur(30px);">
+</view>
+<view>
+                    <view class='m-song-wrap  {{playStatus?"z-playing":"z-pausing"}}'>
+                        <view class="m-song-disc">
+                            <view class="m-song-turn">
+                                <view class="m-song-rollwrap">
+                                    <view class='m-song-img a-circling' style="animation-play-state:{{state}}">
+                                    <image class="u-img" alt="song-img" src="{{ songDetail.al.picUrl }}"></image>
+                                </view>
+                            </view>
+                            <view class="m-song-lgour">
+                                <view class="m-song-light a-circling" style="animation-play-state:{{state}}">
+                                
+                                </view>
+                            </view>
+                        </view>
+                        <text wx:if="{{!playStatus}}" class="m-song-plybtn"></text>
+                    </view>
+                    <view class="m-song-clickarea" bindtap="playOrpause"></view>
+                </view>
+</view>

@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/gedan/gedan",
+    "pages/other/other",
+    "pages/search/search",
+    "pages/login/login",
+    "pages/recommend/recommend",
+    "pages/songDetail/songDetail",
+    "pages/boke/boke",
+    "pages/personal/personal",
+    "pages/kge/kge",
+    "pages/yuncun/yuncun",
+    "pages/login1/login1",
+    "components/songList/songList",
+    "pages/album/album",
+    "pages/personalFM/personalFM"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#d43c33",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "morningMusic"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#d43c33",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "发现",
+        "iconPath": "/static/images/tabs/icon_pd15j6ssnt/faxian_1.png",
+        "selectedIconPath": "/static/images/tabs/icon_qnnjhvbuuln/faxian_1.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我的",
+        "iconPath": "/static/images/tabs/icon_pd15j6ssnt/yinle.png",
+        "selectedIconPath": "/static/images/tabs/icon_qnnjhvbuuln/yinle.png"
+      }
+     
+    
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "requiredBackgroundModes": [
+    "audio"
+  ]
+}
