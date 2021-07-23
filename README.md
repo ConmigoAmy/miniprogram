@@ -15,7 +15,7 @@ wx-miniprogram
 PS.假设你不想使用内网穿透，可以在代码中找到/utils/config.js，在这里设置了两个url： 
   host:'http://localhost:3000',
   mobileHost:'http://morningmusic.vaiwan.com'
-  内网穿透使用的第二个。你可以将/utils/request.js中28行的mobileHost更改为host即可不适用内网穿透。
+  内网穿透使用的第二个。你可以将/utils/request.js中28行的mobileHost更改为host即可不使用内网穿透。
   
   首页：
   ![image](https://user-images.githubusercontent.com/37031800/126748708-c170f23e-634f-4ea4-b79f-d06f9349d99f.png)
